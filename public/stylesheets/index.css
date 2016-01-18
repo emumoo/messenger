@@ -11,7 +11,7 @@ body {
 }
 
 #username {
-  visibility: hidden;
+  display: none;
 }
 
 form {
