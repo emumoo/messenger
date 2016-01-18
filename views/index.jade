@@ -1,0 +1,13 @@
+extends layout
+
+block imports
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  script(src='/javascripts/index.js')
+
+block content
+  ul#messages
+    each raw in messages
+      li= raw.message
+  form#enter(action = '')
+    input#m(autocomplete = 'off')
+    button Send
