@@ -1,10 +1,11 @@
 extends layout
 
 block imports
-  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/index.css')
   script(src='/javascripts/index.js')
 
 block content
+  a#logout(href="/logout") Log out
   ul#messages
     each raw in messages
       li= raw.message

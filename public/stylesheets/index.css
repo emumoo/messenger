@@ -4,6 +4,12 @@ body {
   font: 13px Helvetica, Arial;
 }
 
+#logout {
+  float: right;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+
 form {
   background: #000;
   padding: 3px;
