@@ -1,28 +1,37 @@
 $(document).ready( function() {
 
   var socket = io();
+  var user = $('#username').text();
 
   scrollDown();
 
   $('#enter').submit( function() {
     var message = $('#m').val();
-    socket.emit('chat message', message);
-    $('#m').val('');
 
-    $.ajax({
-      url: '/',
-      type: 'POST',
-      data: "message=" + message,
-      success: function(data) {
-        
-      }
-    });
+    if (message) {
+      socket.emit('chat message', 
+        {
+          "message" : message,
+          "user" : user
+        });
+
+      $('#m').val('');
+
+      $.ajax({
+        url: '/',
+        type: 'POST',
+        data: "message=" + message,
+        success: function(data) {          
+        }
+      });
+
+    }
 
     return false;
   });
 
-  socket.on('chat message', function(msg) {
-    $('#messages').append($('<li>').text(msg));
+  socket.on('chat message', function(data) {
+    $('#messages').append($('<li>').text(data.message));
     scrollDown();
   });
 
@@ -30,5 +39,6 @@ $(document).ready( function() {
   function scrollDown() {
     $('#messages').scrollTop($('#messages').prop('scrollHeight'));
   }
+
 
 });

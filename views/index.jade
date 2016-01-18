@@ -5,6 +5,7 @@ block imports
   script(src='/javascripts/index.js')
 
 block content
+  p#username= username
   a#logout(href="/logout") Log out
   ul#messages
     each raw in messages

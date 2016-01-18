@@ -10,6 +10,10 @@ body {
   padding-right: 10px;
 }
 
+#username {
+  visibility: hidden;
+}
+
 form {
   background: #000;
   padding: 3px;
