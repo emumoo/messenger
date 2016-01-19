@@ -4,8 +4,11 @@ body {
   font: 13px Helvetica, Arial;
 }
 
-#logout {
-  float: right;
+#header {
+  text-align: right;
+}
+
+#header a {
   padding-top: 5px;
   padding-right: 10px;
 }

@@ -6,7 +6,9 @@ block imports
 
 block content
   p.displayNone= username
-  a#logout(href="/logout") Log out
+  div#header
+    a(href="/profile") Profile
+    a(href="/logout") Log out
   ul#messages
     each raw in messages
       if (!raw.user_id)

@@ -106,12 +106,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var profile = require('./routes/profile');
 var logout = require('./routes/logout');
 var api = require('./routes/api');
 
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login', login);
+app.use('/profile', profile);
 app.use('/logout', logout);
 app.use('/api', api);
 
