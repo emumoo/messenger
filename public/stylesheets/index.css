@@ -55,6 +55,9 @@ form button {
 .textRight {
   text-align: right;
 }
+.textCenter {
+  text-align: center
+}
 .floatRight {
   float: right;
 }

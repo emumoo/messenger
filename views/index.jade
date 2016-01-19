@@ -9,7 +9,9 @@ block content
   a#logout(href="/logout") Log out
   ul#messages
     each raw in messages
-      if (raw.user_id && user_dict[raw.user_id.toString()] === username)
+      if (!raw.user_id)
+        li.textCenter= raw.message
+      else if (user_dict[raw.user_id.toString()] === username)
         li.textRight= raw.message
       else
         li= raw.message

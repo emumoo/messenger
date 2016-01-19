@@ -7,7 +7,6 @@ var user_data = global.db.get('users');
 user_data.find().each(function(user) {
   var user_id = user._id.toString();
   user_dict[user_id] = user.username;
-  console.log(user._id.toString());
 });
 
 
