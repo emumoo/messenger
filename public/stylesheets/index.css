@@ -10,9 +10,6 @@ body {
   padding-right: 10px;
 }
 
-#username {
-  display: none;
-}
 
 form {
   background: #000;
@@ -53,4 +50,14 @@ form button {
 
 #messages li:nth-child(odd) {
   background: #eee;
+}
+
+.textRight {
+  text-align: right;
+}
+.floatRight {
+  float: right;
+}
+.displayNone {
+  display: none;
 }

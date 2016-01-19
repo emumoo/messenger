@@ -5,11 +5,15 @@ block imports
   script(src='/javascripts/index.js')
 
 block content
-  p#username= username
+  p.displayNone= username
   a#logout(href="/logout") Log out
   ul#messages
     each raw in messages
-      li= raw.message
+      if (raw.user_id && user_dict[raw.user_id.toString()] === username)
+        li.textRight= raw.message
+      else
+        li= raw.message
+          span.floatRight= raw.user_id ? user_dict[raw.user_id.toString()] : ""
   form#enter(action = '')
     input#m(autocomplete = 'off')
     button Send

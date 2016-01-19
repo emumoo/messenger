@@ -1,15 +1,28 @@
 var express = require('express');
 var router = express.Router();
 
+var user_dict = {};
+var user_data = global.db.get('users');
+
+user_data.find().each(function(user) {
+  var user_id = user._id.toString();
+  user_dict[user_id] = user.username;
+  console.log(user._id.toString());
+});
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if (req.user) {
     var message_data = global.db.get('messages');
     var username = req.user[0].username;
 
+    console.log(user_dict);
+    
     message_data.find({},{},function(e,docs){
       res.render('index', {
         "messages" : docs,
+        "user_dict" : user_dict,
         "username" : username
         });
     });
